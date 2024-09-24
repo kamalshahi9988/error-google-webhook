@@ -1,25 +1,53 @@
-# Example headings
+# Application error reporting on google chat using google webhook API
 
-## Sample Section
+```
+Package: error-google-webhook whould be use as a middleware.
+```
 
-## This'll be a _Helpful_ Section About the Greek Letter Θ!
+## Dependencies:
 
-A heading containing characters not allowed in fragments, UTF-8 characters, two consecutive spaces between the first and second words, and formatting.
+- **axios**
+- **express**
+- **dotenv**
 
-## This heading is not unique in the file
+## How to use ?
 
-TEXT 1
+Install the package
 
-## This heading is not unique in the file
+    npm i --save express-interceptor
 
-TEXT 2
+Configure dotenv
 
-# Links to the example headings above
+    WEBHOOK_URL="WEBHOOK_URL_VALUE"
 
-Link to the sample section: [Link Text](#sample-section).
+```javascript
+// server.js
+const express = require("express");
+const reporterMiddleware = require("error-google-webhook");
+require("dotenv").config();
 
-Link to the helpful section: [Link Text](#thisll--be-a-helpful-section-about-the-greek-letter-Θ).
+const app = express();
 
-Link to the first non-unique section: [Link Text](#this-heading-is-not-unique-in-the-file).
+app.use("/", (req, res, next) => {
+  res.status(502);
+  const name = "Kamal";
+  throw new Error("Bad Gateway Error");
+});
 
-Link to the second non-unique section: [Link Text](#this-heading-is-not-unique-in-the-file-1).
+// Use as the middleware
+app.use(reporterMiddleware);
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+```
+
+Run the application using
+
+    npm start
+
+## Limitations:
+
+This middleware will not report for 404 and 200 responses.

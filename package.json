@@ -1,0 +1,16 @@
+{
+  "name": "@kamal/error-google-webhook",
+  "version": "1.0.0",
+  "description": "app error reporting package for google chat",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webhook",
+    "error",
+    "reporting"
+  ],
+  "author": "Kamal Bahadur Shahi",
+  "license": "MIT"
+}

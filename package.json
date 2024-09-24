@@ -1,11 +1,16 @@
 {
   "name": "error-google-webhook",
-  "version": "1.1.4",
+  "version": "1.1.41",
   "description": "app error reporting package for google chat",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kamalshahi9988/error-google-webhook"
+  },
+  "homepage": "https://github.com/kamalshahi9988/error-google-webhook",
   "keywords": [
     "webhook",
     "error",

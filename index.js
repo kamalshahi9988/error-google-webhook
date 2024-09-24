@@ -1,22 +1,23 @@
-// webhookurl required,
-// and enable webhook or not
-class ErrorGoogleWebhook {
-  constructor({ webhookUrl, isEnable }) {
-    this.webhookUrl = webhookUrl;
-    this.isEnable = isEnable;
-  }
+const axios = require(`axios`);
 
-  sendError() {
-    console.log("err");
-    return "error";
+async function reporterMiddleware(req, res, next) {
+  try {
+    console.log("Test");
+
+    const WEBHOOK_URL = "process.env.WEBHOOK_URL";
+    // const WEBHOOK_URL = process.env.WEBHOOK_URL;
+
+    const text = `Hello test message here`;
+    const response = await axios.post(WEBHOOK_URL, {
+      text: text,
+    });
+    console.log(response);
+    next();
+  } catch (err) {
+    console.log(Err);
+
+    throw new Error(err);
   }
 }
 
-const ss = new ErrorGoogleWebhook({
-  webhookUrl: process.env.ERROR_WEBHOOK_URL,
-  isEnable: true,
-});
-
-ss.sendError();
-
-module.exports = ErrorGoogleWebhook;
+module.exports = reporterMiddleware;

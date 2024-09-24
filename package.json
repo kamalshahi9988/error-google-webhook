@@ -1,6 +1,6 @@
 {
-  "name": "@kamal/error-google-webhook",
-  "version": "1.0.0",
+  "name": "error-google-webhook",
+  "version": "1.0.2",
   "description": "app error reporting package for google chat",
   "main": "index.js",
   "scripts": {
@@ -12,5 +12,8 @@
     "reporting"
   ],
   "author": "Kamal Bahadur Shahi",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.7.7"
+  }
 }

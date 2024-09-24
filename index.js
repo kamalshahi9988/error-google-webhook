@@ -9,7 +9,7 @@ async function reporterMiddleware(req, res, next) {
       const response = await axios.post(WEBHOOK_URL, {
         text: text,
       });
-      console.log(response);
+      console.log(response?.data);
       return next();
     }
     throw new Error("Add WEBHOOK_URL as env variable");

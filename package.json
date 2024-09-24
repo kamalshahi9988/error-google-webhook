@@ -1,6 +1,6 @@
 {
   "name": "error-google-webhook",
-  "version": "1.1.43",
+  "version": "1.1.44",
   "description": "app error reporting package for google chat",
   "main": "index.js",
   "scripts": {

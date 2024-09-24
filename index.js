@@ -14,8 +14,7 @@ async function reporterMiddleware(req, res, next) {
     console.log(response);
     next();
   } catch (err) {
-    console.log(Err);
-
+    console.log(err);
     throw new Error(err);
   }
 }

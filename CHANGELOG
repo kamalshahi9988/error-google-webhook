@@ -1,0 +1,7 @@
+# 1.0.0
+
+* Requirements for the package removed
+* Example added
+* Package now detects the google api endpoint to customize the log.
+* new environment variable `WEBHOOK_SKIP_CODES` introduced. `export WEBHOOK_SKIP_CODES=[200,404,666]`
+* Minor updates

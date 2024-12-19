@@ -1,0 +1,16 @@
+{
+  "name": "error-google-webhook-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Hiup",
+  "license": "MIT",
+  "dependencies": {
+    "error-google-webhook": "^0.1.1",
+    "express": "^4.21.0"
+  }
+}
